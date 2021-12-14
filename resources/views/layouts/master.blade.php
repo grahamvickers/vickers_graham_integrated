@@ -16,8 +16,20 @@
             <ul>
                 <li><a href="/register">SIGN UP</a></li>
                 <li><a href="/login">LOGIN</a></li>
+                <li><a href="/login">HOME</a></li>
             </ul>
         </nav>
+        <div id="navOverCon" class="overlay">
+            <h2 class="hidden">Main Navigation</h2>
+            <a href="javascript:void(0)"class="closebtn" onclick="hideNav()">&times;</a>
+            <div class="overlay-con">
+                <ul>
+                    <li><a href="/register">SIGN UP</a></li>
+                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href="/login">HOME</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
         
     @yield('content')
@@ -26,5 +38,6 @@
         <p id="footP">DESIGNED & DEVELOPED BY GRAHAM VICKERS &COPY;</p>
     </footer>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>

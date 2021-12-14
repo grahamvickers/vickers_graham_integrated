@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::post('/bomberman', 'BombermanController@store')->name('bomberman.create');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
