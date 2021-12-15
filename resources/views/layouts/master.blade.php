@@ -43,7 +43,7 @@
     </header>
 
      <h1 class="hidden">Bizz.Net Online Business Marketplace</h1> 
-     
+
     <main>
         @yield('content')
 
@@ -53,7 +53,6 @@
     <footer>
         <p id="footP">DESIGNED & DEVELOPED BY GRAHAM VICKERS &COPY;</p>
     </footer>
-    <script type="text/javascript" src="./js/main.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    
 </body>
 </html>
