@@ -1,8 +1,308 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+/* Color Theme Swatches in Hex */
+/* Color Theme Swatches in Hex */
+$dark-blue-1: #3C35F2;
+$dark-purple: #615CF2;
+$light-purple: #8985F2;
+$dark-blue-2: #0511F2;
+$light-grey: #F2F2F2;
+$dark-grey: #575757;
 
-// Variables
-@import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// body {
+//    width: 100vw;
+// }
+
+// main{
+//     max-width: 100%;
+// }
+
+h1 {
+    margin-top: 16px;
+}
+
+h2 {
+    font-family: niveau-grotesk, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #575757;
+    font-size: 32px;
+    letter-spacing: .8px;
+    line-height: 38px;
+}
+
+h3 {
+    font-family: niveau-grotesk, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #575757;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+p {
+    font-family: niveau-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #575757;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.button{
+    text-decoration: none;
+    font-family: niveau-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: $dark-purple;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px 10px 40px !important;
+    text-align: center;
+    color: $light-grey;
+    width: 150px !important;
+}
+.hidden {
+    display: none;
+}
+
+#mainNav{
+    display: none;
+}
+  
+
+// hamburger nav below
+.overlay {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #615cf2f9;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-con {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    font-family: niveau-grotesk, sans-serif;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: $light-grey;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #E4E4E4;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.overlay a {
+    font-size: 20px
+}
+
+.overlay .closebtn {
+font-size: 40px;
+top: 15px;
+right: 35px;
+}
+
+// all header settings
+#mainHead{
+    background: $light-grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+#logo {
+    height: 60px;
+}
+
+// main sectioning content
+
+// landing
+.landing{
+    padding: 40px;
+    text-align: center;
+    background: $light-grey;
+}
+
+// intro index
+.introCon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    margin-top: 20px;
+    h2{
+        margin-bottom: 40px;
+    }
+}
+
+.introBoxes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    img{
+        width: 80%;
+        margin-bottom: 20px;
+        max-width: 250px;
+    }
+    h3{
+        margin-bottom: 20px;
+
+    }
+}
+#signUp{
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    img{
+        max-height: 400px;
+    }
+}
+#signUpCon{
+    background: $light-grey;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+// authorized pages customization
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    margin-top: 20px;
+    a{
+        text-decoration: none;
+        font-family: niveau-grotesk, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background: $dark-purple;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 40px 10px 40px !important;
+        text-align: center;
+        color: $light-grey;
+        width: 150px !important; 
+        line-height: 44px;
+    }
+    label{
+        font-family: niveau-grotesk, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #575757;
+        font-size: 18px;
+        line-height: 28px;
+    }
+    input{
+        border-radius: 5px;
+        padding: 5px;
+        width: 200px;
+        border: 2px solid $dark-grey;
+    }
+    button{
+        text-decoration: none;
+        font-family: niveau-grotesk, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        background: $dark-purple;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        color: $light-grey;
+        width: 160px; 
+        margin-top: 20px;
+    }
+}
+#listings{
+    margin-top: 40px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    
+}
+.listingCon{
+    background-color: $light-grey;
+    border-radius: 10px;
+    text-align: left;
+    padding: 30px;
+    margin: 30px;
+    width: 300px;
+    H3{
+        margin-bottom: 10px;
+    }
+    H3:nth-child(odd){
+        color: $dark-purple;
+    }
+}
+
+.image {
+    height: 200px;
+    border-radius: 10px;
+    width: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    margin-bottom: 10px;
+}
+
+footer{
+    background: $light-grey;
+    padding: 40px;
+    text-align: center;
+}
+
+@media screen and(min-width: 680px) {
+
+}
+
+@media screen and(min-width: 1280px) {
+    #mainNav{
+        display: contents;
+    }
+
+    #navOverCon{
+        display: none;
+    }
+
+    #hmbgrMenu{
+        display: none;
+    }
+}
+
+
