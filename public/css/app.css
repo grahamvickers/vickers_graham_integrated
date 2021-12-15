@@ -40,8 +40,10 @@ p {
   background: #615CF2;
   border: none;
   border-radius: 5px;
-  padding: 10px 40px 10px 40px;
+  padding: 10px 40px 10px 40px !important;
+  text-align: center;
   color: #F2F2F2;
+  width: 150px !important;
 }
 
 .hidden {
@@ -146,6 +148,11 @@ p {
           justify-content: center;
   padding: 40px;
   text-align: center;
+  margin-top: 20px;
+}
+
+.introCon h2 {
+  margin-bottom: 40px;
 }
 
 .introBoxes {
@@ -183,6 +190,9 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 
@@ -193,10 +203,79 @@ p {
 #signUpCon {
   background: #F2F2F2;
   padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#signUpCon h2 {
-  margin-bottom: 20px;
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container a {
+  text-decoration: none;
+  font-family: niveau-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: #615CF2;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 40px 10px 40px !important;
+  text-align: center;
+  color: #F2F2F2;
+  width: 150px !important;
+  line-height: 44px;
+}
+
+.container label {
+  font-family: niveau-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #575757;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.container input {
+  border-radius: 5px;
+  padding: 5px;
+  width: 200px;
+  border: 2px solid #575757;
+}
+
+.container button {
+  text-decoration: none;
+  font-family: niveau-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  background: #615CF2;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  color: #F2F2F2;
+  width: 160px;
+  margin-top: 20px;
 }
 
 #bombermen .item .image {

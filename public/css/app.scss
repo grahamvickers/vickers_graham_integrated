@@ -56,8 +56,10 @@ p {
     background: $dark-purple;
     border: none;
     border-radius: 5px;
-    padding: 10px 40px 10px 40px;
+    padding: 10px 40px 10px 40px !important;
+    text-align: center;
     color: $light-grey;
+    width: 150px !important;
 }
 .hidden {
     display: none;
@@ -150,6 +152,10 @@ right: 35px;
     justify-content: center;
     padding: 40px;
     text-align: center;
+    margin-top: 20px;
+    h2{
+        margin-bottom: 40px;
+    }
 }
 
 .introBoxes{
@@ -173,6 +179,7 @@ right: 35px;
     margin-bottom: 60px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     width: 100%;
     img{
         max-height: 400px;
@@ -181,11 +188,63 @@ right: 35px;
 #signUpCon{
     background: $light-grey;
     padding: 30px;
-    h2{
-        margin-bottom: 20px;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+// authorized pages customization
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    margin-top: 20px;
+    a{
+        text-decoration: none;
+        font-family: niveau-grotesk, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background: $dark-purple;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 40px 10px 40px !important;
+        text-align: center;
+        color: $light-grey;
+        width: 150px !important; 
+        line-height: 44px;
+    }
+    label{
+        font-family: niveau-grotesk, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #575757;
+        font-size: 18px;
+        line-height: 28px;
+    }
+    input{
+        border-radius: 5px;
+        padding: 5px;
+        width: 200px;
+        border: 2px solid $dark-grey;
+    }
+    button{
+        text-decoration: none;
+        font-family: niveau-grotesk, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        background: $dark-purple;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        color: $light-grey;
+        width: 160px; 
+        margin-top: 20px;
+    }
+}
 
 #bombermen .item .image {
     height: 200px;

@@ -38,6 +38,13 @@
                     <li><a href="/home">LISTINGS</a></li>
                     <li><a href="/register">SIGN UP</a></li>
                     <li><a href="/login">LOGIN</a></li>
+                    <li>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('LOGOUT') }}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -92,5 +99,8 @@
             @yield('content')
         </main>
     </div>
+    <footer>
+        <p id="footP">DESIGNED & DEVELOPED BY GRAHAM VICKERS &COPY;</p>
+    </footer>
 </body>
 </html>
