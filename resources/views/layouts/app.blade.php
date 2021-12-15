@@ -21,8 +21,15 @@
             <ul>
                 <li><a href="/">HOME</a></li>
                 <li><a href="/home">LISTINGS</a></li>
-                <li><a href="/register">SIGN UP</a></li>
-                <li><a href="/login">LOGIN</a></li>
+                <li><a href="/create">CREATE LISTING</a></li>
+                <li><a href="#">SETTINGS</a></li>
+                <li>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('LOGOUT') }}
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -36,8 +43,8 @@
                 <ul>
                     <li><a href="/">HOME</a></li>
                     <li><a href="/home">LISTINGS</a></li>
-                    <li><a href="/register">SIGN UP</a></li>
-                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href="/create">CREATE LISTING</a></li>
+                    <li><a href="#">SETTINGS</a></li>
                     <li>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
