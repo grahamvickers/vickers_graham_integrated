@@ -28,6 +28,6 @@ class BombermanController extends Controller
             'avatar' => $avatarName
         ]);
         
-        return redirect('/');
+        return redirect('/home');
     }
 }
