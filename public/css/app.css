@@ -1,5 +1,7 @@
 /* Color Theme Swatches in Hex */
+
 /* Color Theme Swatches in Hex */
+
 h1 {
   margin-top: 16px;
 }
@@ -86,7 +88,8 @@ p {
   transition: 0.3s;
 }
 
-.overlay a:hover, .overlay a:focus {
+.overlay a:hover,
+.overlay a:focus {
   color: #E4E4E4;
 }
 
@@ -110,17 +113,13 @@ p {
 #mainHead {
   background: #F2F2F2;
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
           align-items: center;
   padding: 30px;
 }
@@ -137,14 +136,11 @@ p {
 
 .introCon {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
           justify-content: center;
   padding: 40px;
   text-align: center;
@@ -157,14 +153,11 @@ p {
 
 .introBoxes {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
           align-items: center;
   text-align: center;
   margin-top: 30px;
@@ -184,14 +177,11 @@ p {
 #signUp {
   margin-bottom: 60px;
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
 }
@@ -204,27 +194,21 @@ p {
   background: #F2F2F2;
   padding: 30px;
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
 .container {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
           justify-content: center;
   padding: 40px;
   text-align: center;
@@ -278,13 +262,43 @@ p {
   margin-top: 20px;
 }
 
-#bombermen .item .image {
+#listings {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+  flex-wrap: wrap;
+}
+
+.listingCon {
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  text-align: left;
+  padding: 30px;
+  margin: 30px;
+  width: 300px;
+}
+
+.listingCon H3 {
+  margin-bottom: 10px;
+}
+
+.listingCon H3:nth-child(odd) {
+  color: #615CF2;
+}
+
+.image {
   height: 200px;
   border-radius: 10px;
   width: 100%;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
+  margin-bottom: 10px;
 }
 
 footer {
@@ -297,11 +311,13 @@ footer {
   #mainNav {
     display: contents;
   }
+
   #navOverCon {
     display: none;
   }
+
   #hmbgrMenu {
     display: none;
   }
 }
-/*# sourceMappingURL=app.css.map */
+
