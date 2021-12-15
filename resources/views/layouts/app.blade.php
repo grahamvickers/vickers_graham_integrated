@@ -56,8 +56,12 @@
             </div>
         </div>
     </header>
+
+    <main class="py-4">
+        @yield('content')
+    </main>
+
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -100,11 +104,8 @@
                     </ul>
                 </div>
             </div>
-        </nav>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+
     </div>
     <footer>
         <p id="footP">DESIGNED & DEVELOPED BY GRAHAM VICKERS &COPY;</p>
