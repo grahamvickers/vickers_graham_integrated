@@ -37,15 +37,20 @@ const app = new Vue({
 
 
 
-Axios.get('/api/get-bombermen')
+Axios.get('/api/get-listings')
     .then(function ({data}) {
-        const element = document.getElementById("bombermen");
+        const element = document.getElementById("listings");
         element.innerHTML = '';
 
         for(var i = 0; i < data.length; i++) {
-            const item = '<div class="item col-3">' +
-                '<div class="image" style="background:url(' + data[i]['avatarUri'] + ')"></div>' +
-                '<h4>' + data[i]['name'] + '</h4>' +
+            const item = 
+                '<div class="item col-3">' +
+                    '<div class="image" style="background:url(' + data[i]['imgUri'] + ')"></div>' +
+                    '<h3>' + data[i]['name'] + '</h3>' +
+                    '<h3>' + data[i]['price'] + '</h3>' +
+                    '<p>' + data[i]['address']+ '<p>' +
+                    '<p>' + data[i]['profit']+ '<p>' +
+                    '<p>' + data[i]['income']+ '<p>' +
                 '</div>';
 
                 element.innerHTML += item;

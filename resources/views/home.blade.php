@@ -20,6 +20,10 @@
                         Loading Some Businesses...
                     </p>
                 </div>
+
+                <div id="listings">
+
+                </div>
             </div>
         </div>
     </div>
