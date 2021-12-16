@@ -17,7 +17,6 @@ class CreateListingsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('address');
-            $table->string('price');
             $table->string('profit');
             $table->string('income');
             $table->string('img');

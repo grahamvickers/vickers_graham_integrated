@@ -5,14 +5,14 @@
     <div id="searchCon">
     <p>Explore 10,000+ businesses for sale across North America.</p>
         <form>
-            <label for="searchbox">Search:</label>
-            <input type="search" id="searchbox" placeholder="i.e. LTD">
+            <label for="searchInput">Search:</label>
+            <input type="search" id="searchInput" placeholder="i.e. LTD">
         </form>
         <div id="searchDisplay">
-            
+            <p>listings will show here</p>
         </div>
     </div>
-    <div id="maindiv">
+    <div id="displayCon">
 
     </div>
 </section>
