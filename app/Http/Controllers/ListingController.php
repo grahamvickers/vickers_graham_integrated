@@ -44,7 +44,7 @@ class ListingController extends Controller
             'profit' => 'required',
             'income' => 'required',
             'content' => 'required',
-            'img' => 'required|image'
+            'img' => 'required|image|max:50000000'
         ]);
 
         $imgName = Storage::putFile('public', $request->img);

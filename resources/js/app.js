@@ -62,9 +62,10 @@ Axios.get('/api/get-listings')
 
 (function() {
 	"use strict";
+	console.log("search")
 	
-	let searchRequest;
-	let recipeRequest;
+	let inputRequest;
+	let listingRequest;
 	const searchField=document.querySelector("#searchbox");
 
 	function createRequest(){
@@ -80,41 +81,41 @@ Axios.get('/api/get-listings')
 	function showResults(e){
 		//console.log(e.currentTarget.value);
 		let str = e.currentTarget.value;
-		searchRequest = createRequest();
+		inputRequest = createRequest();
 
-		let url="searchrecipe.php?searchstring="+str;
-		searchRequest.onreadystatechange = searchStatus;
-		searchRequest.open("GET", url);
-		searchRequest.send(null);
+		let url="searchlisting.php?searchstring="+str;
+		inputRequest.onreadystatechange = searchStatus;
+		inputRequest.open("GET", url);
+		inputRequest.send(null);
 	}
 
 	function searchStatus() {
 		//console.log("search status");
-		if(searchRequest.readyState===4 && searchRequest.status ===200) {
-			// console.log(searchRequest.responseText);
-			document.querySelector("#txtHint").innerHTML=searchRequest.responseText;
-			if(document.querySelector("#txtHint a")){
-				document.querySelector("#txtHint a"). addEventListener("click", displayInfo)
+		if(inputRequest.readyState===4 && inputRequest.status ===200) {
+			// console.log(inputRequest.responseText);
+			document.querySelector("#searchDisplay").innerHTML=inputRequest.responseText;
+			if(document.querySelector("#searchDisplay a")){
+				document.querySelector("#searchDisplay a"). addEventListener("click", displayInfo)
 			}
 		}
 	}
 
 	function displayInfo(e){
 		//console.log(e.currentTarget.id);
-		let customerID = e.currentTarget.id;
-		recipeRequest = createRequest();
-		console.log(recipeRequest);
+		let listingID = e.currentTarget.id;
+		listingRequest = createRequest();
+		console.log(listingRequest);
 
-		let url="displayrecipe.php?recipeid="+customerID;
-		recipeRequest.onreadystatechange=displayStatus;
-		recipeRequest.open("GET", url);
-		recipeRequest.send(null);
+		let url="displaylisting.php?id="+listingID;
+		listingRequest.onreadystatechange=displayStatus;
+		listingRequest.open("GET", url);
+		listingRequest.send(null);
 	}
 
 	function displayStatus() {
-		if(recipeRequest.readyState===4 && recipeRequest.status===200){
+		if(listingRequest.readyState===4 && listingRequest.status===200){
 			console.log("displaying status")
-			document.querySelector("#maindiv").innerHTML=recipeRequest.responseText;
+			document.querySelector("#maindiv").innerHTML=listingRequest.responseText;
 		}
 	}
 

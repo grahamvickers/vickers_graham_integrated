@@ -2,13 +2,14 @@
 
 @section('content')
 <section class="landing">
-    <div>
+    <div id="searchCon">
+    <p>Explore 10,000+ businesses for sale across North America.</p>
         <form>
             <label for="searchbox">Search:</label>
             <input type="search" id="searchbox" placeholder="i.e. LTD">
         </form>
-        <div id="txtHint">
-            <p>Listing search results...</p>
+        <div id="searchDisplay">
+            
         </div>
     </div>
     <div id="maindiv">
