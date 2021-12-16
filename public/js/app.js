@@ -49665,6 +49665,69 @@ Axios.get('/api/get-listings').then(function (_ref) {
   alert(error);
 });
 
+(function () {
+  "use strict";
+
+  console.log("search");
+  var inputRequest;
+  var listingRequest;
+  var searchField = document.querySelector("#searchbox");
+
+  function createRequest() {
+    var request;
+
+    if (window.XMLHttpRequest) {
+      request = new XMLHttpRequest();
+    } else if (request === null) {
+      console.log("This is an outdated browser");
+    }
+
+    return request;
+  }
+
+  function showResults(e) {
+    //console.log(e.currentTarget.value);
+    var str = e.currentTarget.value;
+    inputRequest = createRequest();
+    var url = "searchlisting.php?searchstring=" + str;
+    inputRequest.onreadystatechange = searchStatus;
+    inputRequest.open("GET", url);
+    inputRequest.send(null);
+  }
+
+  function searchStatus() {
+    //console.log("search status");
+    if (inputRequest.readyState === 4 && inputRequest.status === 200) {
+      // console.log(inputRequest.responseText);
+      document.querySelector("#searchDisplay").innerHTML = inputRequest.responseText;
+
+      if (document.querySelector("#searchDisplay a")) {
+        document.querySelector("#searchDisplay a").addEventListener("click", displayInfo);
+      }
+    }
+  }
+
+  function displayInfo(e) {
+    //console.log(e.currentTarget.id);
+    var listingID = e.currentTarget.id;
+    listingRequest = createRequest();
+    console.log(listingRequest);
+    var url = "displaylisting.php?id=" + listingID;
+    listingRequest.onreadystatechange = displayStatus;
+    listingRequest.open("GET", url);
+    listingRequest.send(null);
+  }
+
+  function displayStatus() {
+    if (listingRequest.readyState === 4 && listingRequest.status === 200) {
+      console.log("displaying status");
+      document.querySelector("#maindiv").innerHTML = listingRequest.responseText;
+    }
+  }
+
+  searchField.addEventListener("keyup", showResults);
+})();
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

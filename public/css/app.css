@@ -242,8 +242,15 @@ p {
 .container input {
   border-radius: 5px;
   padding: 5px;
-  width: 200px;
-  border: 2px solid #575757;
+  border: 2px solid #3C35F2;
+  width: 250px;
+}
+
+.container textarea {
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid #3C35F2;
+  width: 250px;
 }
 
 .container button {
@@ -283,11 +290,11 @@ p {
   width: 300px;
 }
 
-.listingCon H3 {
+.listingCon h3 {
   margin-bottom: 10px;
 }
 
-.listingCon H3:nth-child(odd) {
+.listingCon h3:nth-child(odd) {
   color: #615CF2;
 }
 
@@ -301,6 +308,74 @@ p {
   margin-bottom: 10px;
 }
 
+#searchCon {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+#searchCon form {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#searchCon label {
+  background: #615CF2;
+  font-family: niveau-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color: #F2F2F2;
+  padding: 8.5px 10px 8.5px 10px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#searchCon input {
+  border: 2px solid #615CF2;
+  background: #fff;
+  padding: 5px 10px 5px 10px;
+  font-family: niveau-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  color: #575757;
+  width: 250px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.form-group {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  text-align: left !important;
+  float: left !important;
+}
+
+#createForm {
+  margin-top: 60px;
+}
+
 footer {
   background: #F2F2F2;
   padding: 40px;
@@ -310,6 +385,34 @@ footer {
 @media screen and (min-width: 1280px) {
   #mainNav {
     display: contents;
+  }
+
+  #mainNav ul li {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+  }
+
+  #mainNav a {
+    text-decoration: none;
+    font-family: niveau-grotesk, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #615CF2;
+    font-size: 18px;
+    line-height: 28px;
+    margin-left: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+  }
+
+  #mainNav a:hover {
+    background: #615CF2;
+    color: #F2F2F2;
   }
 
   #navOverCon {
