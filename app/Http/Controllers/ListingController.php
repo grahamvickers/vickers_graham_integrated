@@ -74,9 +74,14 @@ class ListingController extends Controller
     public function show(Listing $listing)
     {   
 
-        Listing::where('city', 'LIKE', "%{$request->q}%")
-            ->orWhere('name', 'LIKE', "%{$request->q}%")
-            ->get(id);
+        Listing::where('city', 'LIKE', "%{$listing->q}%")
+            ->orWhere('name', 'LIKE', "%{$listing->q}%")
+            ->get('id');
+
+            
+            return view('/listings/show?q=');
+            // return redirect()->route('listings.show');
+
     }
 
     /**

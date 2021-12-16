@@ -20,12 +20,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')
     ->name('home');
 
+Route::post('/home', 'ListingController@show')
+    ->name('listings.show');
+
 Route::get('/create', function () {
     return view('create');
 });
-
-Route::post('/bomberman', 'BombermanController@store')
-    ->name('bomberman.create');
 
 Route::post('/listing', 'ListingController@store')
     ->name('listing.create');

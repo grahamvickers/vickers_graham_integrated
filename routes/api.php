@@ -18,9 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['namespace' => 'Api'], function(){
-    Route::get('get-bombermen', 'BombermanController@index');
-});
-
-Route::group(['namespace' => 'Api'], function(){
     Route::get('get-listings', 'ListingController@index');
 });
+
