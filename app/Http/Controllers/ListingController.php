@@ -40,6 +40,7 @@ class ListingController extends Controller
         $request->validate([
             'name' => 'required',
             'address' => 'required',
+            'city' => 'required',
             'price' => 'required',
             'profit' => 'required',
             'income' => 'required',
@@ -52,6 +53,7 @@ class ListingController extends Controller
         Listing::create([
             'name' => $request->name,
             'address' => $request->address,
+            'city' => $request->city,
             'price' => $request->price,
             'profit' => $request->profit,
             'income' => $request->income,
@@ -70,8 +72,11 @@ class ListingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Listing $listing)
-    {
-        //
+    {   
+
+        Listing::where('city', 'LIKE', "%{$request->q}%")
+            ->orWhere('name', 'LIKE', "%{$request->q}%")
+            ->get(id);
     }
 
     /**

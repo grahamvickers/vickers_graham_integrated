@@ -1,10 +1,10 @@
 <?php
 $q=$_GET['searchstring'];
 if($q!=NULL) {
-$db_host='mysql';
-$db_user='root';
-$db_pass='root';
-$db_name='laravel';
+    $db_host='localhost:8083';
+    $db_user='root';
+    $db_pass='root';
+    $db_name='laravel';
 
 if (getenv('IDP_ENVIRONMENT') === 'docker') {
     $db_host = 'mysql';
@@ -13,7 +13,7 @@ if (getenv('IDP_ENVIRONMENT') === 'docker') {
     $db_pass = 'docker_p';
 }
 $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-$sql="SELECT * FROM listing WHERE name LIKE '".$q."%'";
+$sql="SELECT * FROM listing WHERE city LIKE '".$q."%'";
 $result = mysqli_query($connection, $sql);
 $numrows = mysqli_num_rows($result);
 

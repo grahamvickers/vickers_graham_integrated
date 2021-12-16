@@ -16,6 +16,7 @@ class ListingSeeder extends Seeder
         [
             'name' => 'Shipping Bros LTD.',
             'address' => '1459 Myers Road W, London, Ontario',
+            'city' => 'London',
             'price' => '12,000,000',
             'profit' => '32%',
             'income' => '18,000,000',
@@ -25,6 +26,7 @@ class ListingSeeder extends Seeder
         [
             'name' => 'Davis Logistics Inc.',
             'address' => '1282 Long Road Dr., Sarnia, Ontario',
+            'city' => 'Sarnia',
             'price' => '8,000,000',
             'profit' => '24%',
             'income' => '12,000,000',

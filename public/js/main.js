@@ -10,62 +10,46 @@ function hideNav() {
 
 (function() {
 	"use strict";
-	console.log("search")
-	
+
 	let inputRequest;
 	let listingRequest;
-	const searchField=document.querySelector("#searchbox");
+	const searchField=document.querySelector("#searchInput");
 
-	function createRequest(){
+	function requestHandler(){
 		let request;
 		if(window.XMLHttpRequest) {
 			request = new XMLHttpRequest();
-		}else if (request===null) {
-			console.log("This is an outdated browser")
+		} else if (request===null){
+			console.log("Outdated Browser, sorry please update that")
 		}
 		return request;
 	}
 
-	function showResults(e){
-		//console.log(e.currentTarget.value);
+	function showListings(e) {
+		// console.log(e.currentTarget.value);
 		let str = e.currentTarget.value;
-		inputRequest = createRequest();
+		inputRequest = requestHandler();
 
-		let url="searchlisting.php?searchstring="+str;
-		inputRequest.onreadystatechange = searchStatus;
+		// console.log(inputRequest);
+
+		let url = "/listings/show?q="+str;
+		inputRequest.onreadystatechange = listingStatus;
 		inputRequest.open("GET", url);
 		inputRequest.send(null);
+
 	}
 
-	function searchStatus() {
-		//console.log("search status");
-		if(inputRequest.readyState===4 && inputRequest.status ===200) {
-			// console.log(inputRequest.responseText);
-			document.querySelector("#searchDisplay").innerHTML=inputRequest.responseText;
-			if(document.querySelector("#searchDisplay a")){
-				document.querySelector("#searchDisplay a"). addEventListener("click", displayInfo)
-			}
+	function listingStatus() {
+		console.log("listing search status");
+		if(inputRequest.readyState=== 4 && inputRequest.status === 200){
+			console.log(responseText);
+			document.queryCommandValue("#searchDisplay").innerHTML=inputRequest.responseText;
 		}
 	}
 
-	function displayInfo(e){
-		//console.log(e.currentTarget.id);
-		let listingID = e.currentTarget.id;
-		listingRequest = createRequest();
-		console.log(listingRequest);
+	searchField.addEventListener("keyup", showListings)
 
-		let url="displaylisting.php?id="+listingID;
-		listingRequest.onreadystatechange=displayStatus;
-		listingRequest.open("GET", url);
-		listingRequest.send(null);
-	}
+})();
 
-	function displayStatus() {
-		if(listingRequest.readyState===4 && listingRequest.status===200){
-			console.log("displaying status")
-			document.querySelector("#maindiv").innerHTML=listingRequest.responseText;
-		}
-	}
 
-	searchField.addEventListener("keyup", showResults);
-})();	
+

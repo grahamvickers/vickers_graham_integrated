@@ -17,6 +17,7 @@ class Listing extends Model
     protected $fillable = [
         'name',
         'address',
+        'city',
         'price',
         'profit',
         'income',
