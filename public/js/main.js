@@ -40,10 +40,10 @@ function hideNav() {
 	}
 
 	function listingStatus() {
-		console.log("listing search status");
-		if(inputRequest.readyState=== 4 && inputRequest.status === 200){
+		// console.log("listing search status");
+		if(inputRequest.readyState===4 && inputRequest.status===200){
 			console.log(responseText);
-			document.queryCommandValue("#searchDisplay").innerHTML=inputRequest.responseText;
+			document.querySelector("#searchDisplay").innerHTML=inputRequest.responseText;
 		}
 	}
 
