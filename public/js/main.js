@@ -32,7 +32,7 @@ function hideNav() {
 
 		// console.log(inputRequest);
 
-		let url = "/listings/show?q="+str;
+		let url = "/api/get-listings/?q="+str;
 		inputRequest.onreadystatechange = listingStatus;
 		inputRequest.open("GET", url);
 		inputRequest.send(null);
