@@ -41,6 +41,7 @@ class ListingController extends Controller
             ]);
         }
 
+       
         return response()->json($listings, 200);
     }
 }
