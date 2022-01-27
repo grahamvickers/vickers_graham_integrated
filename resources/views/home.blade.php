@@ -6,10 +6,10 @@
     <p>Explore 10,000+ businesses for sale across North America.</p>
         <form>
             <label for="searchInput">Search:</label>
-            <input type="search" id="searchInput" placeholder="i.e. LTD">
+            <input type="search" id="searchInput" placeholder="ex. London">
         </form>
         <div id="searchDisplay">
-            <p>listings will show here</p>
+            <p>listings will appear here</p>
         </div>
     </div>
     <div id="displayCon">

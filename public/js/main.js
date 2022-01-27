@@ -20,7 +20,7 @@ function hideNav() {
 		if(window.XMLHttpRequest) {
 			request = new XMLHttpRequest();
 		} else if (request===null){
-			console.log("Outdated Browser, sorry please update that")
+			console.log("Outdated Browser, sorry please switch to a modern web browser")
 		}
 		return request;
 	}
@@ -42,8 +42,30 @@ function hideNav() {
 	function listingStatus() {
 		// console.log("listing search status");
 		if(inputRequest.readyState===4 && inputRequest.status===200){
-			console.log(responseText);
+			// console.log(inputRequest);
 			document.querySelector("#searchDisplay").innerHTML=inputRequest.responseText;
+			if(document.querySelector("#searchDisplay a")){
+				document.querySelector("#searchDisplay a"). addEventListener("click", displayListing)
+			}
+		}
+	}
+
+	function displayListing(e){
+		console.log(e.currentTarget.id);
+		let listingID = e.currentTarget.id;
+		listingRequest = createRequest();
+		console.log(listingRequest);
+
+		let url="/api/get-listings/?id="+listingID;
+		listingRequest.onreadystatechange=displayStatus;
+		listingRequest.open("GET", url);
+		listingRequest.send(null);
+	}
+
+	function displayStatus() {
+		if(listingRequest.readyState===4 && listingRequest.status===200){
+			console.log("displaying status")
+			document.querySelector("#displayCon").innerHTML=listingRequest.responseText;
 		}
 	}
 
