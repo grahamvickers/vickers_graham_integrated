@@ -92,7 +92,7 @@ function hideNav() {
 
 		let url = "/api/get-listings/?q="+str;
 		inputRequest.onreadystatechange = listingStatus;
-		inputRequest.open("GET", url);
+		inputRequest.open("GET", url, true);
 		inputRequest.send(null);
 
 	}
