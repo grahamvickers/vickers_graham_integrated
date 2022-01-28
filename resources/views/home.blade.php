@@ -10,6 +10,7 @@
         </form>
         <div id="searchDisplay">
             <p>listings will appear here</p>
+            
         </div>
     </div>
     <div id="displayCon">
