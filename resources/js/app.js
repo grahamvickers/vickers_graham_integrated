@@ -56,72 +56,109 @@ Axios.get('/api/get-listings')
     alert(error);
 });
 
-
-
+// this is the main search functionality using the fetch api method
 (function() {
-	"use strict";
+	const searchInput = document.querySelector("#searchInput");
 
-	let inputRequest;
-	let listingRequest;
-	const searchField=document.querySelector("#searchInput");
+    function showListings(e) {
+        let str;
+        if(e){
+            str = e.currentTarget.value;
+        } else {
+            str = 1;
+        }
+        let url = "/api/get-listings/?q="+str;
 
-	function requestHandler(){
-		let request;
-		if(window.XMLHttpRequest) {
-			request = new XMLHttpRequest();
-		} else if (request===null){
-			console.log("Outdated Browser, sorry please switch to a modern web browser")
-		}
-		return request;
-	}
+        fetch(url)
+        .then(function(response){
+            return response.json();
+        }).then(function(inputResults){
+            console.log(inputResults)
+            document.querySelector("#searchDisplay").innerHTML = `<ul id="resultList"></ul>`;
+			let resultList = document.querySelector("#resultList");
 
-	function showListings(e) {
-		// console.log(e.currentTarget.value);
-		let str = e.currentTarget.value;
-		inputRequest = requestHandler();
-
-		// console.log(inputRequest);
-
-		let url = "/api/get-listings/?q="+str;
-		inputRequest.onreadystatechange = listingStatus;
-		inputRequest.open("GET", url, true);
-		inputRequest.send(null);
-
-	}
-
-	function listingStatus() {
-		// console.log("listing search status");
-		if(inputRequest.readyState===4 && inputRequest.status===200){
-			// console.log(inputRequest);
-			document.querySelector("#searchDisplay").innerHTML=inputRequest.responseText;
-			if(document.querySelector("#searchDisplay a")){
-				document.querySelector("#searchDisplay a"). addEventListener("click", displayListing)
-			}
-		}
-	}
-
-	// function displayListing(e){
-	// 	console.log(e.currentTarget.id);
-	// 	let listingID = e.currentTarget.id;
-	// 	listingRequest = createRequest();
-	// 	console.log(listingRequest);
-
-	// 	let url="/api/get-listings/?id="+listingID;
-	// 	listingRequest.onreadystatechange=displayStatus;
-	// 	listingRequest.open("GET", url);
-	// 	listingRequest.send(null);
-	// }
-
-	// function displayStatus() {
-	// 	if(listingRequest.readyState===4 && listingRequest.status===200){
-	// 		console.log("displaying status")
-	// 		document.querySelector("#displayCon").innerHTML=listingRequest.responseText;
-	// 	}
-	// }
-
-	searchField.addEventListener("keyup", showListings)
-
+            inputResults.forEach(result => {
+                resultList.innerHTML += 
+                `<li id="resultCon">
+                    <img src="${result.imgUri}">
+                    <div id="infoCon">
+                    <h3>${result.name}</h3>
+                    <p>${result.price}</p>
+                    </div>
+                </li>`
+            });
+        }).catch(function(err){
+            console.log(err);
+        })
+    }
+    searchInput.addEventListener("keyup", showListings);
 })();
+
+
+// (function() {
+// 	"use strict";
+
+// 	let inputRequest;
+// 	let listingRequest;
+// 	const searchField=document.querySelector("#searchInput");
+
+// 	function requestHandler(){
+// 		let request;
+// 		if(window.XMLHttpRequest) {
+// 			request = new XMLHttpRequest();
+// 		} else if (request===null){
+// 			console.log("Outdated Browser, sorry please switch to a modern web browser")
+// 		}
+// 		return request;
+// 	}
+
+// 	function showListings(e) {
+// 		// console.log(e.currentTarget.value);
+// 		let str = e.currentTarget.value;
+// 		inputRequest = requestHandler();
+
+// 		// console.log(inputRequest);
+
+// 		let url = "/api/get-listings/?q="+str;
+// 		inputRequest.onreadystatechange = listingStatus;
+// 		inputRequest.open("GET", url, true);
+// 		inputRequest.send(null);
+
+// 	}
+
+// 	function listingStatus() {
+// 		// console.log("listing search status");
+// 		if(inputRequest.readyState===4 && inputRequest.status===200){
+// 			// console.log(inputRequest);
+// 			document.querySelector("#searchDisplay").innerHTML=inputRequest.responseText;
+// 			if(document.querySelector("#searchDisplay a")){
+// 				document.querySelector("#searchDisplay a"). addEventListener("click", displayListing)
+// 			}
+// 		}
+// 	}
+ 
+// 	function displayListing(e){
+// 		console.log(e.currentTarget.id);
+// 		let listingID = e.currentTarget.id;
+// 		listingRequest = createRequest();
+// 		console.log(listingRequest);
+
+// 		let url="/api/get-listings/?id="+listingID;
+// 		listingRequest.onreadystatechange=displayStatus;
+// 		listingRequest.open("GET", url);
+// 		listingRequest.send(null);
+// 	}
+
+// 	function displayStatus() {
+// 		if(listingRequest.readyState===4 && listingRequest.status===200){
+// 			console.log("displaying status")
+// 			document.querySelector("#displayCon").innerHTML=listingRequest.responseText;
+// 		}
+// 	}
+
+// 	searchField.addEventListener("keyup", showListings)
+
+// })();
 
 
 
