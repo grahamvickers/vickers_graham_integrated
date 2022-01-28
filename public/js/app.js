@@ -14621,15 +14621,6 @@ Axios.get('/api/get-listings').then(function (_ref) {
 })["catch"](function (error) {
   alert(error);
 });
-console.log("dynamic nav");
-
-function showNav() {
-  document.getElementById("navOverCon").style.width = "100%";
-}
-
-function hideNav() {
-  document.getElementById("navOverCon").style.width = "0%";
-}
 
 (function () {
   "use strict";
@@ -14657,7 +14648,7 @@ function hideNav() {
 
     var url = "/api/get-listings/?q=" + str;
     inputRequest.onreadystatechange = listingStatus;
-    inputRequest.open("GET", url);
+    inputRequest.open("GET", url, true);
     inputRequest.send(null);
   }
 
