@@ -23,11 +23,7 @@ class ListingController extends Controller
                 ->map->only([
                 'name',
                 'imgUri',
-                'address',
                 'price',
-                'profit',
-                'income',
-                'content'
             ]);
         } else {
             $listings = Listing::all()->map->only([
