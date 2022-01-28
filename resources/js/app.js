@@ -56,15 +56,7 @@ Axios.get('/api/get-listings')
     alert(error);
 });
 
-console.log("dynamic nav");
 
-function showNav() {
-    document.getElementById("navOverCon").style.width = "100%";
-}
-  
-function hideNav() {
-    document.getElementById("navOverCon").style.width = "0%";
-}
 
 (function() {
 	"use strict";
@@ -108,24 +100,24 @@ function hideNav() {
 		}
 	}
 
-	function displayListing(e){
-		console.log(e.currentTarget.id);
-		let listingID = e.currentTarget.id;
-		listingRequest = createRequest();
-		console.log(listingRequest);
+	// function displayListing(e){
+	// 	console.log(e.currentTarget.id);
+	// 	let listingID = e.currentTarget.id;
+	// 	listingRequest = createRequest();
+	// 	console.log(listingRequest);
 
-		let url="/api/get-listings/?id="+listingID;
-		listingRequest.onreadystatechange=displayStatus;
-		listingRequest.open("GET", url);
-		listingRequest.send(null);
-	}
+	// 	let url="/api/get-listings/?id="+listingID;
+	// 	listingRequest.onreadystatechange=displayStatus;
+	// 	listingRequest.open("GET", url);
+	// 	listingRequest.send(null);
+	// }
 
-	function displayStatus() {
-		if(listingRequest.readyState===4 && listingRequest.status===200){
-			console.log("displaying status")
-			document.querySelector("#displayCon").innerHTML=listingRequest.responseText;
-		}
-	}
+	// function displayStatus() {
+	// 	if(listingRequest.readyState===4 && listingRequest.status===200){
+	// 		console.log("displaying status")
+	// 		document.querySelector("#displayCon").innerHTML=listingRequest.responseText;
+	// 	}
+	// }
 
 	searchField.addEventListener("keyup", showListings)
 
