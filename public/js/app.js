@@ -14615,7 +14615,7 @@ Axios.get('/api/get-listings').then(function (_ref) {
   element.innerHTML = '';
 
   for (var i = 0; i < data.length; i++) {
-    var item = '<div class="listingCon">' + '<div class="image" style="background:url(' + data[i]['imgUri'] + ')"></div>' + '<h3>' + data[i]['name'] + '</h3>' + '<h3>' + '$' + data[i]['price'] + '</h3>' + '<p>' + data[i]['address'] + '<p>' + '<p>' + 'Profit Margin:     ' + data[i]['profit'] + '<p>' + '<p>' + 'Net Income:    ' + data[i]['income'] + '<p>' + '</div>';
+    var item = '<div class="listingCon">' + '<div class="image" style="background:url(' + data[i]['imgUri'] + ')"></div>' + '<h3>' + data[i]['name'] + '</h3>' + '<h3>' + '$' + data[i]['price'] + '</h3>' + '<p>' + data[i]['address'] + '<p>' + '<p>' + 'Profit Margin:     ' + data[i]['profit'] + '<p>' + '<p>' + 'Net Income:    ' + data[i]['income'] + '<p>' + '<button class="button">Read More</button>' + '</div>';
     element.innerHTML += item;
   }
 })["catch"](function (error) {
@@ -14642,7 +14642,7 @@ Axios.get('/api/get-listings').then(function (_ref) {
       document.querySelector("#searchDisplay").innerHTML = "<ul id=\"resultList\"></ul>";
       var resultList = document.querySelector("#resultList");
       inputResults.forEach(function (result) {
-        resultList.innerHTML += "<li id=\"resultCon\">\n                    <img src=\"".concat(result.imgUri, "\">\n                    <div id=\"infoCon\">\n                    <h3>").concat(result.name, "</h3>\n                    <p>").concat(result.price, "</p>\n                    </div>\n                </li>");
+        resultList.innerHTML += "<li id=\"resultCon\">\n                    <img src=\"".concat(result.imgUri, "\">\n                    <div id=\"infoCon\">\n                    <h3>").concat(result.name, "</h3>\n                    <p>").concat(result.price, "</p>\n                    </div>\n                    <button class=\"button\">Read More</button>\n                </li>");
       });
     })["catch"](function (err) {
       console.log(err);

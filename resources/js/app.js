@@ -47,6 +47,8 @@ Axios.get('/api/get-listings')
                     '<p>' + data[i]['address']+ '<p>' +
                     '<p>' + 'Profit Margin:     ' + data[i]['profit']+ '<p>' +
                     '<p>' + 'Net Income:    ' + data[i]['income']+ '<p>' +
+                    '<button class="button">Read More</button>' +
+
                 '</div>';
 
                 element.innerHTML += item;
@@ -85,6 +87,7 @@ Axios.get('/api/get-listings')
                     <h3>${result.name}</h3>
                     <p>${result.price}</p>
                     </div>
+                    <button class="button">Read More</button>
                 </li>`
             });
         }).catch(function(err){

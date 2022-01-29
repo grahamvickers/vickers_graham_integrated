@@ -38,14 +38,16 @@ p {
   text-decoration: none;
   font-family: niveau-grotesk, sans-serif;
   font-weight: 400;
+  font-size: 16px;
   font-style: normal;
   background: #615CF2;
   border: none;
   border-radius: 5px;
-  padding: 10px 40px 10px 40px !important;
+  padding: 10px 20px 10px 20px !important;
   text-align: center;
   color: #F2F2F2;
   width: 150px !important;
+  max-width: 250px;
 }
 
 .hidden {
@@ -237,20 +239,29 @@ p {
   color: #575757;
   font-size: 18px;
   line-height: 28px;
+  text-align: left !important;
 }
 
 .container input {
   border-radius: 5px;
   padding: 5px;
-  border: 2px solid #3C35F2;
+  border: 2px solid #615CF2;
   width: 250px;
+  font-family: niveau-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #575757;
 }
 
 .container textarea {
   border-radius: 5px;
   padding: 5px;
-  border: 2px solid #3C35F2;
+  border: 2px solid #615CF2;
   width: 250px;
+  font-family: niveau-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #575757;
 }
 
 .container button {
@@ -296,6 +307,15 @@ p {
 
 .listingCon h3:nth-child(odd) {
   color: #615CF2;
+}
+
+.listingCon button {
+  padding: none !important;
+  width: 100%;
+}
+
+.listingCon .button {
+  padding: none !important;
 }
 
 .image {
@@ -382,6 +402,13 @@ p {
   margin-right: 10px;
 }
 
+#resultCon .button {
+  font-size: 16px;
+  float: right !important;
+  margin-right: none;
+  padding: none;
+}
+
 .form-group {
   display: -webkit-box;
   display: flex;
@@ -397,7 +424,8 @@ p {
 
 .form-group label {
   text-align: left !important;
-  float: left !important;
+  -webkit-box-pack: start !important;
+          justify-content: flex-start !important;
 }
 
 #createForm {
@@ -408,6 +436,10 @@ footer {
   background: #F2F2F2;
   padding: 40px;
   text-align: center;
+}
+
+footer div {
+  margin-top: none !important;
 }
 
 @media screen and (min-width: 1280px) {
