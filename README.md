@@ -52,12 +52,14 @@ Now go back to - [localhost:8082](https://localhost:8082/register) and create a 
 * Safari - 100%
 * IE - Unknown
 
+## Issues 
 
+* Images are glitching and not showing and stating not found in console. Everything was fine until I deleted cache. Need to investigate
 ## Authors
 
 * **Graham Vickers** - *Design & Build* - [Fanshawe College](https://github.com/grahamvickers)
 
 ## Acknowledgments
 
-* Thanks to Marco for teaching me how to incorporate these technologies.
+* Thanks to Marco and Tina for teaching me how to incorporate these technologies.
 
