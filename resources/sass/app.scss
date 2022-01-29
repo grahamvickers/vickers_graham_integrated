@@ -52,14 +52,16 @@ p {
     text-decoration: none;
     font-family: niveau-grotesk, sans-serif;
     font-weight: 400;
+    font-size: 16px;
     font-style: normal;
     background: $dark-purple;
     border: none;
     border-radius: 5px;
-    padding: 10px 40px 10px 40px !important;
+    padding: 10px 20px 10px 20px !important;
     text-align: center;
     color: $light-grey;
     width: 150px !important;
+    max-width: 250px;
 }
 .hidden {
     display: none;
@@ -222,18 +224,27 @@ right: 35px;
         color: #575757;
         font-size: 18px;
         line-height: 28px;
+        text-align: left !important;
     }
     input{
         border-radius: 5px;
         padding: 5px;
-        border: 2px solid $dark-blue-1;
+        border: 2px solid $dark-purple;
         width: 250px;
+        font-family: niveau-grotesk, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #575757;
     }
     textarea{
         border-radius: 5px;
         padding: 5px;
-        border: 2px solid $dark-blue-1;
+        border: 2px solid $dark-purple;
         width: 250px;
+        font-family: niveau-grotesk, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #575757;
     }
     
     button{
@@ -275,6 +286,13 @@ right: 35px;
     }
     h3:nth-child(odd){
         color: $dark-purple;
+    }
+    button{
+        padding: none !important;
+        width: 100%;
+    }
+    .button{
+       padding: none !important;
     }
 }
 
@@ -347,10 +365,15 @@ right: 35px;
         max-width: 129px;
         margin-right: 10px;
     }
-
+    .button{
+        font-size: 16px;
+        float: right !important;
+        margin-right: none;
+        padding: none;
+    }
 }
 
-// create view changes below
+// create view - styles below
 .form-group{
     display: flex;
     flex-direction: column;
@@ -359,7 +382,8 @@ right: 35px;
     margin-bottom: 10px;
     label{
         text-align: left !important;
-        float: left !important;
+        // float: left !important;
+        justify-content: flex-start !important;
     }
 }
 
@@ -370,6 +394,9 @@ footer{
     background: $light-grey;
     padding: 40px;
     text-align: center;
+    div{
+        margin-top: none !important;
+    }
 }
 
 @media screen and(min-width: 680px) {
